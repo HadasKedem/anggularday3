@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <title>Hello Angular!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="ex3Ctrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body >
+   
+<div ng-controller="calcCtrl">
+
+                <input type="text" name="personName" ng-model="x" required> {{expression}}
+                <input type="text" name="personName" ng-model="y" required> = 
+                {{result}}
+          <div>
+                <select id="exp" ng-model="expression">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                      </select>
+                      <br>
+                    </div>
+
+       
+        <button ng-click="calcFunc()">do the math</button>
+</div>
+<div ng-controller="myNameCtrl">
+    <input type="text" name="personName" ng-model="x" required>
+  {{x}}
+</div>
+   
+<div ng-controller="c2Ctrl">
+
+  {{result}}
+<button ng-click="encreaseFunc()">encrease by 1</button>
+</div>
+
+<div ng-controller="mobileCtrl">
+
+        
+    <br>
+    <script type="text/ng-template" id="disply">
+    <table border="1" align="center">
+        <tr style="background:blueviolet ">
+            <th>#</th>
+            <th>MODEL</th>
+            <th>COLOR</th>
+            <th>PRICE</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="m in devices ">
+            <td> {{$index}} </td>
+            <td>{{m.model}}</td>
+            <td>{{m.color}}</td>
+            <td>{{m.price}}</td>
+            <td><button  ng-click="deleteMob( $index)"  >X</button></td>
+        </tr>
+    </table>
+    </script>
+
+    <script type="text/ng-template" id="edit">
+      <table border="1" align="center">
+          <tr style="background:blueviolet ">
+              <th>#</th>
+              <th>MODEL</th>
+              <th>COLOR</th>
+              <th>PRICE</th>
+              <th></th>
+          </tr>
+          <tr ng-repeat="m in devices ">
+              <td> <input ng-model="mod" type="text" /> </td>
+              <td><input ng-model="modelEdit" type="text"/></td>
+              <td><input ng-model="colorEdit" type="text"/></td>
+              <td><input ng-model="priceEdit" type="text"/></td>
+              <td><button  ng-click="deleteMob( $index)"  >X</button></td>
+          </tr>
+      </table>
+      </script>
+    <div>
+        <p>MODEL = <input ng-model="mod" type="text"/></p>
+        <p>COLOR = <input ng-model="col" type="text"/></p>
+        <p>PRICE = <input  ng-model="pri" type="text"/></p>
+    </div>
+    <button ng-click="addMob(mod,col,pri)">Add Device</button>
+
+    <p>ID = <input ng-model="i" type="text"/></p>
+
+    <button ng-click="updateMob(i, mod, col, pri)">Update Device</button>
+    <button ng-click="geteditTemplate()">Update</button>
+    <button ng-click="getdisplyTemplate()">disply</button>
+
+</div>
+
+
+</body>
+
+</html>

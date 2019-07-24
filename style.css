@@ -1,0 +1,21 @@
+
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+    background-image: url("phi.jpg");
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    tab-size: 15px;
+  }
+  
+  .classA {
+    background-position: center;
+    background-size: round auto; 
+background-size: cover;
+size: 50000px;
+width: 250px;
+height: 250px;
+  }
+  
+  
